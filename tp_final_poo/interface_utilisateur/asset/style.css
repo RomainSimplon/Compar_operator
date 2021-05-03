@@ -1,6 +1,7 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
+  background-color: #C4BDAF;
 }
 
 /* Start General */
@@ -14,15 +15,48 @@ body {
   -webkit-box-sizing: border-box;
 }
 
+#desti{
+  color: #293845;
+  text-align: center;
+}
+
+
+/* DIV PLAGE CHOIX DEST */
+
+#destinations{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+#nava{
+  text-decoration: none;
+  color:#293845;
+  justify-content: space-around 80px;
+}
+
+#navli{
+  list-style: none;
+}
+
+/* DIV____________*/
+
+#svg{
+  font-size: 30px;
+}
+
 nav ul li a {
-  color: #FFF;
+  color: #293845;
   text-decoration: none;
 }
 
 /* End General */
 /* Start Navbar */
 nav ul {
-  background-color: #EE9E14;
+  background-color: #F3C19D;
+  padding: 10px;
+  border: solid 2px #E8833A;
 }
 
 nav ul > li {
@@ -34,11 +68,12 @@ nav ul > li {
 }
 
 nav ul > li:not(:last-of-type):hover {
-  background-color: #222;
+  color: white;
 }
 
+
 nav ul > li:first-of-type {
-  background-color: #222;
+ 
 }
 
 nav ul > li:last-of-type {
@@ -79,11 +114,36 @@ nav ul > ol > li {
 
 nav ul > ol > li:hover a {
   margin: 20px;
+  background-color: #e7ae4c;
 }
 
 nav ul > ol > li:hover {
-  background: #000;
+  background: rgb(38, 38, 38);
   cursor: pointer;
+}
+
+footer{
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  color: #293845; 
+}
+
+/* CSS */
+
+#tour_operator1 {
+  float:left; 
+  width:25%;
+  height:280px;
+}
+
+#tour_operator2{
+  float:right;
+  width:25%;
+  height:280px;
 }
 
 /* Start Menue Right */

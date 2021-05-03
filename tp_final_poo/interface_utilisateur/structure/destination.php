@@ -7,8 +7,8 @@
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="./interface_utilisateur/asset/style.css">
-
+    <link rel="stylesheet" href="../asset/style.css">
+    
 </head>
 <body>
 <nav role="navigation" id="navMenu">
@@ -25,3 +25,26 @@
     </li>
   </ul>
 </nav>
+
+
+<h1 id="desti">DESTINATIONS</h1>
+
+<div id="destinations">
+<h3>Choisissez votre destination :</h3>
+
+<ul>
+<li id="navli"><a id="nava" href="">Grenoble</a></li>
+<li id="navli"><a id="nava" href="">Costa Rica</a></li>
+<li id="navli"><a id="nava" href="./desti/malte.php">Malte</a></li>
+<li id="navli"><a id="nava" href="">Ibiza</a></li>
+<li id="navli"><a id="nava" href="./desti//zurich.php">Zurich (Premium)</a></li>
+</ul>
+</div>
+
+
+
+<?php
+
+include 'footer.php';
+
+

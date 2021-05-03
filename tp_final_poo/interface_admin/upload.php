@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
-    <input type="text" name="lieu" placeholder="Destination">
-    <input type="text" name="prix" placeholder="prix">
-    <input type="submit"> 
+    <form action="process/insert_destination.php" method="post">
+    <input type="text" name="location" placeholder="Destination">
+    <input type="text" name="price" placeholder="prix">
+    <input type="hidden" name="id_tour_operator" placeholder="prix" value="1">
+    <input type="submit" name="ajouter"> 
     </form>
 </body>
 </html>
