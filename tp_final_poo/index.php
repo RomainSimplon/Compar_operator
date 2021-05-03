@@ -1,7 +1,7 @@
 <?php
 include 'interface_utilisateur/structure/header.php';
 ?>
- <h1>Destinations</h1>
+<h1>Destinations</h1>
 
 <h3>Choisissez votre destination :</h3>
 
@@ -12,3 +12,6 @@ include 'interface_utilisateur/structure/header.php';
 <li><a href="">Ibiza</a></li>
 <li><a href="">Zurich (Premium)</a></li>
 </ul>
+<?php
+
+include 'interface_utilisateur/structure/footer.php';
