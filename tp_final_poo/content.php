@@ -1,50 +1,36 @@
 <?php
  include 'interface_utilisateur/config/pdo.php';
  include 'interface_utilisateur/structure/header.php';
- 
-?>
+ require 'interface_utilisateur/class/Manager.php';
+ require 'interface_utilisateur/class/Destination.php';
+ include 'interface_utilisateur/class/TourOperator.php';
+ $manager = new Manager($bdd);
+
+
+$location = $_GET["location"];
+// $reponse = $bdd->query('SELECT * FROM destinations WHERE id='.$userId );
+// ($donnees = $reponse->fetch());
+
+$operators = $manager->getOperatorByDestination($location);
+
+echo "<h2>" . ucfirst($location) . "</h2>";
 
 
 
+foreach ($operators as $operator) {
 
-<?php
-$userId = $_GET["id"];
-$reponse = $bdd->query('SELECT * FROM destinations WHERE id='.$userId );
+    if ($operator['operator']->getIsPremium() === 1) {
 
+      echo "<h1>" . ucfirst($operator['operator']->getName()) . "</h1><a href='operateur.php?name=".$operator['operator']->getName()."'>Voir toutes les offres de cet opérateur</a>";
+      echo "<p>Prix : " . $operator['destination']->getPrice() . " €</p>";
+      
+    } else {
 
-($donnees = $reponse->fetch());
+      echo "<h3>" . $operator['operator']->getName() . "</h3><a href='operateur.php?name=".htmlspecialchars($operator['operator']->getName())."'>Voir toutes les offres de cet opérateur</a>";
+      echo "<p>Prix : " . $operator['destination']->getPrice() . " €</p>";
 
-?>
-<h1 id="desti"><? echo $donnees['location'] ?></h1>
-
-<div id="tour_boxes">
-
-<div id="tour_operator1">
-<h2>Learn:</h2>
-                It is a good platform to learn programming.
-                It is an educational website. Prepare for
-                the Recruitment drive  of product based 
-                companies like Microsoft, Amazon, Adobe 
-                etc with a free online placement preparation 
-                course.
-</div>
-
-<div id="tour_operator2">
-<h2>Contribute:</h2>
-                Any geeks can help other geeks by writing
-                articles on the GeeksforGeeks, publishing
-                articles follow few steps that are Articles
-                that need little modification/improvement
-                from reviewers are published first.
-
-</div>
-
-
-</div>
-
-
-
-
-<?php
+    };
+}
+  
 
 include 'interface_utilisateur/structure/footer.php';

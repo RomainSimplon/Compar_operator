@@ -1,17 +1,20 @@
-<?php
+<?php 
+  require 'interface_utilisateur/config/Autoload.php';
   require 'interface_utilisateur/config/pdo.php';
-  require 'interface_utilisateur/class/Destination.php';
-  require 'interface_utilisateur/class/Manager.php';
   include 'interface_utilisateur/structure/header.php';
+  Autoloader::register();
   $manager = new Manager($bdd);
 ?>
 
 
 
-<h1 id="desti">DESTINATIONS</h1>
+
+
+
+<h1 id="titledestination">DESTINATIONS</h1>
 
 <div id="destinations">
-<h3>Choisissez votre destination :</h3>
+<h3>⇣ Choisissez votre destination ⇣</h3>
 
 
 <?php
@@ -22,11 +25,11 @@ $list = $manager->getAllDestination();
                     echo 'aucune Destination est disponible pour le momment';
                 } else {
                     foreach ($list as $unelist)
-                    echo "<a href='content.php?id=".$unelist->getId()."'>".($unelist->getLocation())."</a><br>";
+                    echo "<a href='content.php?location=".$unelist->getLocation()."'>".($unelist->getLocation())."</a><br>";
 }
 
-                    
-                
+
+
 ?>
 
 <!-- <ul>
@@ -43,5 +46,3 @@ $list = $manager->getAllDestination();
 
 
 include 'interface_utilisateur/structure/footer.php';
-
-

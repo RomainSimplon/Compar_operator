@@ -7,15 +7,24 @@ class review {
     private $author;
     private $is_tour_operator;
 
-    
-    public function __construct($id,$message,$author,$is_tour_operator)
+    public function __construct(array $donnees)
     {
-        $this->id = $id;
-        $this->message = $message;
-        $this->author = $author;
-        $this->is_tour_operator = $is_tour_operator;
+        $this->hydrate($donnees);
     }
-
+    
+    
+    public function hydrate(array $donnees)
+    {
+        foreach ($donnees as $key => $value)
+        {
+        $method = 'set'.ucfirst($key);
+        
+        if(method_exists($this, $method))
+        {
+            $this->$method($value);
+        }
+        }
+    }
 
 
     public function getId(){
