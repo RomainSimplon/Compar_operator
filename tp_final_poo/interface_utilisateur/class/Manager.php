@@ -14,8 +14,19 @@ class Manager {
 
 
     public function getAllDestination(){
-        
+
+    $list = [];
+    $select = $this->bdd->prepare('SELECT * FROM destinations');
+    $select->execute();
+   
+    foreach($select->fetchAll() as $loc){ 
+
+        array_push($list, new Destination($loc));
+
     }
+            return $list;
+}
+
 
     public function getOperatorByDestination(){
         

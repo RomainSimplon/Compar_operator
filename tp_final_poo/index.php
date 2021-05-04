@@ -2,7 +2,10 @@
 include 'interface_utilisateur/structure/header.php';
 ?>
 
-<h1 id="desti"><a href="interface_utilisateur/structure/destination.php">DESTINATIONS</a></h1>
+<div class="title">
+<h1 id="desti"><a id="nava" href="destination.php">DESTINATIONS</a></h1>
+</div> 
+
 
 <?php
 

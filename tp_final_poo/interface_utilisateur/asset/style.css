@@ -15,9 +15,25 @@ body {
   -webkit-box-sizing: border-box;
 }
 
-#desti{
+.title{
   color: #293845;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#desti{
+  text-align:  center;
+}
+
+
+#desticenter{
+  border: solid 1 px pink;
 }
 
 

@@ -18,6 +18,7 @@
 </svg></a></li>
     <li><a href="#">DESTINATIONS</a></li>
     <li><a href="#">CONTACT</a></li>
+    <li><a href="/interface_admin/upload.php">ADMIN</a></li>
     <li>
       <a href="#">
           <label for="menuBurger">☰</label>
