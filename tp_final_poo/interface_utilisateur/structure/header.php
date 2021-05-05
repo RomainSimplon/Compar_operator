@@ -19,7 +19,7 @@
     <li><a href="destination.php">DESTINATIONS</a></li>
     <li><a href="liste_operator.php">LISTE DES OPERATEURS</a></li>
     <li><a href="#">CONTACT</a></li>
-    <li><a href="interface_admin/admin_home.php">ADMIN</a></li>
+    <li><a href="interface_admin/admin_list.php">ADMIN</a></li>
     <li>
       <a href="#">
           <label for="menuBurger">☰</label>

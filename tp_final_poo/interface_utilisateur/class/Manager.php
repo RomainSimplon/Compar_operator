@@ -111,11 +111,11 @@ public function offreOperator($id){
 
 public function CreatReview(Review $messages){
     $q = $this->bdd->prepare(
-        'INSERT INTO reviews (message, price,id_tour_operator)
+        'INSERT INTO reviews (message, author,id_tour_operator)
         VALUES(:message, :author, :id_tour_operator)'
     );
     $q->bindValue(':message', $messages->getMessage());
-    $q->bindValue(':author', $messages->getAuthor(), PDO::PARAM_INT);
+    $q->bindValue(':author', $messages->getAuthor());
     $q->bindValue(':id_tour_operator', $messages-> getTourOperator());
     $q->execute();
 }
@@ -131,7 +131,27 @@ public function CreatReview(Review $messages){
     
         }
                 return $list;
+
     }
+
+    public function getAllMessages(){
+        $messages = [];
+    $select = $this->bdd->prepare('SELECT * FROM reviews');
+    $select->execute();
+   
+    foreach($select->fetchAll() as $msg){ 
+
+        array_push($messages, new Review($msg));
+
+    }
+            return $messages;
+    }
+
+
+
+
+
+
 
     public function updateOperatorToPremium(){
         

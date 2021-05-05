@@ -70,6 +70,20 @@ position: absolute;
   transition-delay: 0.1s;
 }
 
+#nava{
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from {transform: translate(0, 0px);}
+  65% {transform: translate(0, 15px);}
+  to {transform: translate(0, 0px);}
+  
+}
+
 
 #nava:hover{
   color: #FFF;
@@ -95,6 +109,12 @@ h3{
 nav ul li a {
   color: #293845;
   text-decoration: none;
+}
+
+#contento{
+  font-size: 70px;
+  text-align: center;
+  font-variant: small-caps;
 }
 
 /* End General */
@@ -185,12 +205,36 @@ footer{
   float:left; 
   width:25%;
   height:280px;
+  background-color: #77777793;
+  width: 600px;
 }
+
+#linky{
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+}
+
+#messauthor{
+  color: white;
+  font-variant: small-caps;
+  text-align: center;
+}
+
 
 #tour_operator2{
   float:right;
   width:25%;
   height:280px;
+  background-color: #77777793;
+  width: 600px;
+}
+
+#tour_boxes{
+  margin: 20px;
 }
 
 /* Start Menue Right */

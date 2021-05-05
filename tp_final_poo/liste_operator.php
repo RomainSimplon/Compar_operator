@@ -10,7 +10,7 @@ $manager = new Manager($bdd);
 <h1 id="titledestination">Operateurs disponible</h1>
 
 <div id="destinations">
-<h3>⇣ Choisissez votre destination ⇣</h3>
+<h3>⇣ Choisissez votre opérateur ⇣</h3>
 
 
 <?php
@@ -28,13 +28,6 @@ $list = $manager->getAllOperator();
 
 ?>
 
-<!-- <ul>
-<li id="navli"><a id="nava" href="">Grenoble</a></li>
-<li id="navli"><a id="nava" href="">Costa Rica</a></li>
-<li id="navli"><a id="nava" href="./desti/malte.php">Malte</a></li>
-<li id="navli"><a id="nava" href="">Ibiza</a></li>
-<li id="navli"><a id="nava" href="./desti//zurich.php">Zurich (Premium)</a></li>
-</ul> -->
 </div>
 
 

@@ -1,6 +1,7 @@
 <?php
 require __DIR__.'/../../interface_utilisateur/config/pdo.php';
 require '../../interface_utilisateur/config/Autoload.php';
+Autoloader::register();
 
 
 
