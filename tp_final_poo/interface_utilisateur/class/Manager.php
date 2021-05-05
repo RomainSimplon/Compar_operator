@@ -32,6 +32,8 @@ class Manager {
             return $list;
 }
 
+
+
 public function getOperatorByDestination($location){
         
     $allOperators = [];
@@ -77,12 +79,58 @@ public function getOperatorByDestination($location){
 
 }
 
-    public function CreatReview(){
-        
+
+public function CreatOperator(TourOperator $operators){
+    var_dump($operators);
+    $q = $this->bdd->prepare(
+        'INSERT INTO tour_operators (name, grade,link,is_premium)
+        VALUES(:name, :grade, :link, :is_premium)'
+    );
+    $q->bindValue(':name', $operators->getName());
+    $q->bindValue(':grade', $operators->getGrade(), PDO::PARAM_INT);
+    $q->bindValue(':link', $operators->getLink());
+    $q->bindValue(':is_premium', $operators->getIsPremium());
+    $q->execute();
+}
+
+
+public function offreOperator($id){
+
+
+    $liste_offre = [];
+    $select = $this->bdd->prepare('SELECT * FROM destinations WHERE id_tour_operator = ? ');
+    $select->execute([$id]);;
+    $data = $select->fetchAll(PDO::FETCH_ASSOC);
+    foreach($data as $loc){ 
+
+        array_push($liste_offre, new Destination($loc));
+
     }
+            return $liste_offre;
+}
+
+public function CreatReview(Review $messages){
+    $q = $this->bdd->prepare(
+        'INSERT INTO reviews (message, price,id_tour_operator)
+        VALUES(:message, :author, :id_tour_operator)'
+    );
+    $q->bindValue(':message', $messages->getMessage());
+    $q->bindValue(':author', $messages->getAuthor(), PDO::PARAM_INT);
+    $q->bindValue(':id_tour_operator', $messages-> getTourOperator());
+    $q->execute();
+}
 
     public function getAllOperator(){
-        
+        $list = [];
+        $select = $this->bdd->prepare('SELECT * FROM tour_operators');
+        $select->execute();
+       
+        foreach($select->fetchAll() as $operators){ 
+    
+            array_push($list, new TourOperator($operators));
+    
+        }
+                return $list;
     }
 
     public function updateOperatorToPremium(){

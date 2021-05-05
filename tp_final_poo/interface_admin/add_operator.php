@@ -8,13 +8,12 @@
     <link href="../interface_utilisateur/asset/css/upload.css" rel="stylesheet">
 </head>
 <body>
-    <form action="process/insert_destination.php" method="post">
-    <input type="text" name="location" placeholder="Destination">
-    <input type="text" name="price" placeholder="prix">
-    <input type="hidden" name="id_tour_operator" placeholder="prix" value="1">
+    <form action="process/insert_operator.php" method="post">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="grade" placeholder="rate">
+    <input type="text" name="link" placeholder="link">
+    <input type="number" name="is_premium" placeholder="premium">
     <input type="submit" name="ajouter"> 
     </form>
 </body>
-
-<a href="./../index.php"><button type="button"><span>⇠</span></button></a>
 </html>

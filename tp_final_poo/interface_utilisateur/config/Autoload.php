@@ -6,7 +6,7 @@ class Autoloader{
     }
 
     static  function autoload ($class_name){
-        require 'interface_utilisateur/class/' .$class_name . '.php';
+        require __DIR__.'/../class/' .$class_name . '.php';
     }
 }
 

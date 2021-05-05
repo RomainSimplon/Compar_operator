@@ -70,6 +70,7 @@ position: absolute;
   transition-delay: 0.1s;
 }
 
+
 #nava:hover{
   color: #FFF;
 }
@@ -119,7 +120,7 @@ nav ul > li:not(:last-of-type):hover {
 
 
 nav ul > li:first-of-type {
- 
+ list-style: none;
 }
 
 nav ul > li:last-of-type {

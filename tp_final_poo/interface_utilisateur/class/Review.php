@@ -5,7 +5,7 @@ class review {
     private $id;
     private $message;
     private $author;
-    private $is_tour_operator;
+    private $id_tour_operator;
 
     public function __construct(array $donnees)
     {
@@ -27,19 +27,40 @@ class review {
     }
 
 
+    public function setId($id){
+        $this->id = $id;
+    }
+
     public function getId(){
         return $this->id;
     }
 
+
+    public function setMessage($message){
+        $this->message = $message;
+    }
+
+
     public function getMessage(){
         return $this->message;
+    }
+
+
+
+    public function setAuthor($author){
+        $this->author = $author;
     }
 
     public function getAuthor(){
         return $this->author;
     }
 
+
+    public function setTourOperator($id_tour_operator){
+        $this->id_tour_operator = $id_tour_operator;;
+    }
+
     public function getTourOperator(){
-        return $this->is_tour_operator;
+        return $this->id_tour_operator;
     }
 }
