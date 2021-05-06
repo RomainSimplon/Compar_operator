@@ -1,6 +1,6 @@
 <?php
 
-class Review {
+class Review{
 
     private $id;
     private $message;

@@ -4,45 +4,38 @@
   include 'interface_utilisateur/structure/header.php';
   Autoloader::register();
   $manager = new Manager($bdd);
+  $list = $manager->getAllDestination();
+
+
+
+  ?>
+
+  <h1 id="titledestination">DESTINATIONS</h1>
+  <?php
+
+  if (empty($list)) {
+    echo 'aucune Destination est disponible pour le momment';
+  } else {
+    foreach ($list as $unelist){
+
+    
 ?>
 
 
 
-
-
-
-<h1 id="titledestination">DESTINATIONS</h1>
-
-<div id="destinations">
-<h3>⇣ Choisissez votre destination ⇣</h3>
-
-
-<?php
-
-$list = $manager->getAllDestination();
-
-                if (empty($list)) {
-                    echo 'aucune Destination est disponible pour le momment';
-                } else {
-                    foreach ($list as $unelist)
-                    echo "<a href='content.php?location=".$unelist->getLocation()."'>".($unelist->getLocation())."</a><br>";
-}
-
-
-
-?>
-
-<!-- <ul>
-<li id="navli"><a id="nava" href="">Grenoble</a></li>
-<li id="navli"><a id="nava" href="">Costa Rica</a></li>
-<li id="navli"><a id="nava" href="./desti/malte.php">Malte</a></li>
-<li id="navli"><a id="nava" href="">Ibiza</a></li>
-<li id="navli"><a id="nava" href="./desti//zurich.php">Zurich (Premium)</a></li>
-</ul> -->
+<div id="destinations" class="card" tabindex="0">
+<h1 class="card__title"><?php 
+    echo "<a class='destination' href='content.php?location=".$unelist->getLocation()."'>".($unelist->getLocation())."</a><br>";
+?></h1>
+<p class="card__description">Lorem ipsum dolor sit amet and this is all the lorem ipsum text I remember</p>
 </div>
 
+<?php
+  }}
+  ?>
+
+
+
 
 <?php
-
-
 include 'interface_utilisateur/structure/footer.php';

@@ -16,19 +16,19 @@ $list = $manager->getAllOperator();
     <link href="../interface_utilisateur/asset/css/upload.css" rel="stylesheet">
 </head>
 <body>
-    <form action="process/insert_destination.php" method="post">
+    <form action="process/insert_destination.php" method="post" enctype="multipart/form-data">
     <input type="text" name="location" placeholder="Destination">
     <input type="text" name="price" placeholder="prix">
-    
-        
     Tour Operator : <select name="id_tour_operator" id="">
             <?php if (empty($list)) {
                     echo 'aucune Destination est disponible pour le momment';
                 } else {
                     foreach ($list as $operateur)
                    echo "<option value='".$operateur->getId()."'>".$operateur->getName()."</option>";
-}
-             ?>
+} 
+?>
+Votre .jpg <input type="file" name="photo" id="fileUpload">
+            
     </select>
     <input type="submit" name="ajouter"> 
     </form>

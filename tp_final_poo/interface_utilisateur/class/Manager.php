@@ -156,24 +156,15 @@ public function CreatReview(Review $messages){
 
     public function CreatDestination(Destination $lieu){
         $q = $this->bdd->prepare(
-            'INSERT INTO destinations (location, price,id_tour_operator)
-            VALUES(:location, :price, :id_tour_operator)'
+            'INSERT INTO destinations (location, price,id_tour_operator,image)
+            VALUES(:location, :price, :id_tour_operator, :image)'
         );
         $q->bindValue(':location', $lieu->getLocation());
         $q->bindValue(':price', $lieu->getPrice(), PDO::PARAM_INT);
         $q->bindValue(':id_tour_operator', $lieu->getId_tour_operator());
+        $q->bindValue(':image', $lieu->getImage());
         $q->execute();
     }
-
-
-
-    // public function deleteDestination($id){
-        
-    // $delete = $this->bdd->prepare('DELETE FROM destinations WHERE id = ? ');
-    // $delete->execute([$id]);;
-
-    // }
-
 
     public function deleteDestination(Destination $destination){
 
@@ -183,19 +174,37 @@ public function CreatReview(Review $messages){
 
 
 
-
-
     public function deleteTourOperator(TourOperator $operator){
 
         $this->bdd->exec('DELETE FROM tour_operators WHERE id = '.$operator->getId());
 
     }
 
-    // public function deleteOperator($id){
-    //     $delete = $this->bdd->prepare('DELETE FROM tour_operators WHERE id = ? ');
-    // $delete->execute([$id]);;
+    
+    public function login(Admin $log){
+        if(isset($_POST['btn'])){
+            $user = addslashes(strip_tags($_POST['$user']));
+            $pw = addslashes(strip_tags($_POST['pw']));
 
-    // }
+            if (!empty($user) AND !empty($pw)) {
+                $sql = $this->bdd->prepare("SELECT * FROM 'users' WHERE username = :user AND password = :pw");
+                $sql->execute(array('users' => $user,'pw' => $pw));
+
+                if($sql->rowCount()){
+                    $data = $sql->fetch();
+                    $_SESSION['id'] = $data['id'];
+                    $_SESSION['id'] = true;
+                    header('location:admin_login.php');
+                }else{
+                    echo 'username or password are wrong';
+                }
+            }else{
+                echo "please enter username and password";
+            }
+        }
+    }
+
+
 
 
 

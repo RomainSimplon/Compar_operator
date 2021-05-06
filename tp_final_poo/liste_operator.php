@@ -4,9 +4,8 @@ require 'interface_utilisateur/config/pdo.php';
 include 'interface_utilisateur/structure/header.php';
 Autoloader::register();
 $manager = new Manager($bdd);
+
 ?>
-
-
 <h1 id="titledestination">Operateurs disponible</h1>
 
 <div id="destinations">

@@ -4,6 +4,7 @@ class Destination {
     private $id;
     private $location;
     private $price;
+    private $image;
     private $id_tour_operator;
 
 
@@ -63,4 +64,13 @@ public function setId_tour_operator($id_tour_operator){
 public function getId_tour_operator(){
     return $this->id_tour_operator;
 }
+
+public function setImage($image){
+    $this->image = $image;
+}
+
+public function getImage(){
+    return $this->image;
+}
+
 }

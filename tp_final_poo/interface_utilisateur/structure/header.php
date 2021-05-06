@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./interface_utilisateur/asset/css/style.css">
-
+    <link rel="stylesheet" href="./interface_utilisateur/asset/css/destination.css">
 </head>
 <body>
 <nav role="navigation" id="navMenu">
@@ -19,7 +19,7 @@
     <li><a href="destination.php">DESTINATIONS</a></li>
     <li><a href="liste_operator.php">LISTE DES OPERATEURS</a></li>
     <li><a href="#">CONTACT</a></li>
-    <li><a href="interface_admin/Login_v1/admin_login.php">ADMIN</a></li>
+    <li><a href="interface_admin/admin_home.php">ADMIN</a></li>
     <li>
       <a href="#">
           <label for="menuBurger">☰</label>
