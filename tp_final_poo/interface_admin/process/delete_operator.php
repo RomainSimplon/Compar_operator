@@ -5,12 +5,12 @@ Autoloader::register();
 $manager = new Manager($bdd);
 $id = $_GET["id"];
 var_dump($id);
-$destination = new Destination(['id'=>$id]);
-$deleteDestination = $manager->deleteDestination($destination);
+$operator = new TourOperator(['id'=>$id]);
+
+$deleteOperator = $manager->deleteTourOperator($operator);
 
 
 
-echo "<script type='text/javascript'>document.location.replace('../admin_destination.php');</script>";
-
+echo "<script type='text/javascript'>document.location.replace('../admin_operator.php');</script>";
 
 

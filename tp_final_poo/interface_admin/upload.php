@@ -1,3 +1,11 @@
+<?php
+include '../interface_utilisateur/config/pdo.php';
+require '../interface_utilisateur/config/Autoload.php';
+Autoloader::register();
+$manager = new Manager($bdd);
+$list = $manager->getAllOperator();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +19,20 @@
     <form action="process/insert_destination.php" method="post">
     <input type="text" name="location" placeholder="Destination">
     <input type="text" name="price" placeholder="prix">
-    <input type="hidden" name="id_tour_operator" placeholder="prix" value="1">
+    
+        
+    Tour Operator : <select name="id_tour_operator" id="">
+            <?php if (empty($list)) {
+                    echo 'aucune Destination est disponible pour le momment';
+                } else {
+                    foreach ($list as $operateur)
+                   echo "<option value='".$operateur->getId()."'>".$operateur->getName()."</option>";
+}
+             ?>
+    </select>
     <input type="submit" name="ajouter"> 
     </form>
 </body>
 
-<a href="./../index.php"><button type="button"><span>⇠</span></button></a>
+<a href="admin_destination.php"><button type="button"><span>⇠</span></button></a>
 </html>

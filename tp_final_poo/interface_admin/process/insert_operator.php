@@ -15,3 +15,5 @@ $manager->CreatOperator($operator);
 
 
 }
+
+echo "<script type='text/javascript'>document.location.replace('../admin_operator.php');</script>";

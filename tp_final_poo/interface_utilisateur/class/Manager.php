@@ -150,9 +150,6 @@ public function CreatReview(Review $messages){
 
 
 
-
-
-
     public function updateOperatorToPremium(){
         
     }
@@ -167,6 +164,47 @@ public function CreatReview(Review $messages){
         $q->bindValue(':id_tour_operator', $lieu->getId_tour_operator());
         $q->execute();
     }
+
+
+
+    // public function deleteDestination($id){
+        
+    // $delete = $this->bdd->prepare('DELETE FROM destinations WHERE id = ? ');
+    // $delete->execute([$id]);;
+
+    // }
+
+
+    public function deleteDestination(Destination $destination){
+
+        $this->bdd->exec('DELETE FROM destinations WHERE id = '.$destination->getId());
+
+    }
+
+
+
+
+
+    public function deleteTourOperator(TourOperator $operator){
+
+        $this->bdd->exec('DELETE FROM tour_operators WHERE id = '.$operator->getId());
+
+    }
+
+    // public function deleteOperator($id){
+    //     $delete = $this->bdd->prepare('DELETE FROM tour_operators WHERE id = ? ');
+    // $delete->execute([$id]);;
+
+    // }
+
+
+
+
+
+
+
+
+
 }
 
 

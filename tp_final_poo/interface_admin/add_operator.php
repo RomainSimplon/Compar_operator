@@ -14,6 +14,7 @@
     <input type="text" name="link" placeholder="link">
     <input type="number" name="is_premium" placeholder="premium">
     <input type="submit" name="ajouter"> 
+    <a href="admin_operator.php"><button type="button"><span>⇠</span></button></a>
     </form>
 </body>
 </html>

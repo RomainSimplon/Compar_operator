@@ -12,6 +12,6 @@ var_dump($lieu);
 var_dump($_POST['price']);
 $manager->CreatDestination($lieu);
 
-
 }
 
+echo "<script type='text/javascript'>document.location.replace('../admin_destination.php');</script>";
