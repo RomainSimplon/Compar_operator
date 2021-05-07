@@ -14,6 +14,7 @@ $liste_offre = $manager->offreOperator($id);
 
 <div id="tour_boxes">
 <link rel="stylesheet" href="./interface_utilisateur/asset/css/style.css">
+
 <div id="tour_operator1"> <!-- GAUCHE -->
 <?php 
                 if (empty($liste_offre)) {
@@ -22,9 +23,7 @@ $liste_offre = $manager->offreOperator($id);
                     foreach ($liste_offre as $unelist)
                     echo "<a id='linky' href='content.php?location=".$unelist->getLocation()."'>".($unelist->getLocation())."</a><br>";
 }
-
 ?>
-
 </div>
 
 <div id="tour_operator2"> <!-- DROITE -->
@@ -32,20 +31,29 @@ $liste_offre = $manager->offreOperator($id);
 <form action="./interface_utilisateur/config/insert_review.php" method="post">
     <input type="text" name="message" placeholder="Message">
     <input type="text" name="author" placeholder="Auteur">
-    <input type="hidden" name="id_tour_operator" placeholder="auteur" value="1">
+    <input type="hidden" name="id_tour_operator" placeholder="auteur" value="<?= $id ?>">
     <input type="submit" name="ajouter"> 
-    </form>
+</form>
 
-    <?php
+
+</div>
+
+<div id="tour_operator3">
+<?php
     $messages = $manager->getAllMessages();
     foreach($messages as $msg){
-        echo $msg->getAuthor();
+        echo $msg->getAuthor() ;
         echo ' :  ';
         echo $msg->getMessage();
     }
 ?>
 </div>
+
 </div>
+
+
+
+
 
 <?php
 

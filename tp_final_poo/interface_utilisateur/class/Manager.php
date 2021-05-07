@@ -120,6 +120,8 @@ public function CreatReview(Review $messages){
     $q->execute();
 }
 
+
+
     public function getAllOperator(){
         $list = [];
         $select = $this->bdd->prepare('SELECT * FROM tour_operators');

@@ -87,6 +87,7 @@ position: absolute;
 
 #nava:hover{
   color: #FFF;
+  font-size: 100px;
 }
 
 #navli{
@@ -107,8 +108,22 @@ h3{
 }
 
 nav ul li a {
-  color: #293845;
+  color: #ffffff;
   text-decoration: none;
+
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+}
+
+nav ul li a:hover{
+  color: #293845;
+  font-size: 20px;
+  font-weight: bold;
+
+  width: 100%;
+
 }
 
 #contento{
@@ -117,13 +132,19 @@ nav ul li a {
   font-variant: small-caps;
 }
 
+.logopage{
+  
+}
+
+
+
 /* End General */
 /* Start Navbar */
 nav ul {
-  background-color: #F3C19D;
+  background-color: #c07d0029;
   padding: 10px;
-  border-bottom: solid 4px #9b4304;
-  border-top: solid 4px #9b4304;
+  border-bottom: solid 0px #9b4304;
+  border-top: solid 0px #9b4304;
 }
 
 nav ul > li {
@@ -187,6 +208,7 @@ nav ul > ol > li:hover a {
 nav ul > ol > li:hover {
   background: rgb(38, 38, 38);
   cursor: pointer;
+
 }
 
 footer{
@@ -207,6 +229,7 @@ footer{
   height:280px;
   background-color: #77777793;
   width: 600px;
+  padding: 10px;
 }
 
 #linky{
@@ -216,6 +239,10 @@ footer{
   font-weight: bold;
   text-align: center;
   position: absolute;
+}
+
+#linky:hover{
+  color: #4d4d4d;
 }
 
 #messauthor{
@@ -231,6 +258,19 @@ footer{
   height:280px;
   background-color: #77777793;
   width: 600px;
+  padding: 10px;
+}
+
+#tour_operator3{
+  float:left;
+  width:25%;
+  height:280px;
+  background-color: #d9836941;
+  width: 1240px;
+  padding: 10px;
+  
+  margin-top: 40px;
+  align-items: center;
 }
 
 #tour_boxes{
@@ -262,7 +302,6 @@ footer{
 
 /* End Media Query */
 /*# sourceMappingURL=style.css.map */
-
 
 
 

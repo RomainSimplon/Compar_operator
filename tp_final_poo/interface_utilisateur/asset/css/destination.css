@@ -1,8 +1,8 @@
 .card {
   -webkit-clip-path: circle(20% at 50% 50%);
           clip-path: circle(20% at 50% 50%);
-  -webkit-transition: all ease-in-out .3s;
-  transition: all ease-in-out .3s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .card__infoicon {
@@ -60,19 +60,6 @@
 
 .card__description:hover {
   display: block;
-}
-
-.card:hover, .card:focus {
-  display: block;
-  -webkit-transition: margin-right 2s;
-  transition: margin-right 2s;
-  -webkit-clip-path: circle(75%);
-          clip-path: circle(75%);
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08);
-          box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08);
-  background-image: url("../image/backg.png");
-  outline: none;
 }
 
 .card:hover .card__infoicon, .card:focus .card__infoicon {

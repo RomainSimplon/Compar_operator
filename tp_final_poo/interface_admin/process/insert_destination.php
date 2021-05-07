@@ -49,4 +49,4 @@ $manager->CreatDestination($lieu);
 
 }
 
-// echo "<script type='text/javascript'>document.location.replace('../admin_destination.php');</script>";
+ echo "<script type='text/javascript'>document.location.replace('../admin_destination.php');</script>";
