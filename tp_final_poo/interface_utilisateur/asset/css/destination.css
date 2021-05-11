@@ -5,17 +5,6 @@
   transition: 2s;
 }
 
-.card__infoicon {
-  position: absolute;
-  text-decoration: none;
-  top: 10px;
-  right: 28px;
-  font-size: 1.4em;
-  color: #000000;
-  -webkit-transition: ease-out .3s;
-  transition: ease-out .3s;
-}
-
 .card__destination, .card a {
   color: white;
   text-decoration: none;
@@ -37,37 +26,5 @@
   font-size: 1.4em;
   line-height: 1.6;
   display: none;
-}
-
-.card__credits {
-  margin: 0;
-  padding: 4px 0;
-  font-size: 1.1em;
-}
-
-.card__reference {
-  display: inline-block;
-  border-bottom: 1px solid transparent;
-  color: #0099ff;
-  text-decoration: none;
-  -webkit-transition: ease-in .3s;
-  transition: ease-in .3s;
-}
-
-.card__reference:hover {
-  border-bottom-color: #0099ff;
-}
-
-.card__description:hover {
-  display: block;
-}
-
-.card:hover .card__infoicon, .card:focus .card__infoicon {
-  opacity: 0;
-}
-
-.card:focus {
-  -webkit-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08), 0px 0px 0px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08), 0px 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=destination.css.map */

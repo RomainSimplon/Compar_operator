@@ -33,6 +33,24 @@ class Manager {
 }
 
 
+public function getLastDestination(){
+
+    $list = [];
+    $select = $this->bdd->prepare('SELECT * FROM destinations ORDER BY id DESC limit 3');
+    $select->execute();
+   
+    foreach($select->fetchAll() as $loc){ 
+
+        array_push($list, new Destination($loc));
+
+    }
+            return $list;
+}
+
+
+
+
+
 
 public function getOperatorByDestination($location){
         
@@ -158,13 +176,14 @@ public function CreatReview(Review $messages){
 
     public function CreatDestination(Destination $lieu){
         $q = $this->bdd->prepare(
-            'INSERT INTO destinations (location, price,id_tour_operator,image)
-            VALUES(:location, :price, :id_tour_operator, :image)'
+            'INSERT INTO destinations (location, price,id_tour_operator,image,imagenoiretblanc)
+            VALUES(:location, :price, :id_tour_operator, :image, :imagenoiretblanc)'
         );
         $q->bindValue(':location', $lieu->getLocation());
         $q->bindValue(':price', $lieu->getPrice(), PDO::PARAM_INT);
         $q->bindValue(':id_tour_operator', $lieu->getId_tour_operator());
         $q->bindValue(':image', $lieu->getImage());
+        $q->bindValue(':imagenoiretblanc', $lieu->getImagenoiretblanc());
         $q->execute();
     }
 

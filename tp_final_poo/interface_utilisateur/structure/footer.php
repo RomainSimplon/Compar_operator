@@ -7,5 +7,6 @@
 
 
 <script src="interface_utilisateur/asset/js/nav.js"></script>
+<script src="interface_utilisateur/asset/js/main.js"></script>
 </body>
 </html>

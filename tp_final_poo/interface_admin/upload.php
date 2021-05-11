@@ -27,7 +27,8 @@ $list = $manager->getAllOperator();
                    echo "<option value='".$operateur->getId()."'>".$operateur->getName()."</option>";
 } 
 ?>
-Votre .jpg <input type="file" name="photo" id="fileUpload">
+Votre .jpg <input type="file" name="photo" id="fileUpload"><br>
+Votre .jpg en noir et blanc<input type="file" name="imagenoiretblanc" id="fileUpload"><br>
             
     </select>
     <input type="submit" name="ajouter"> 

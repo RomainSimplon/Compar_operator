@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: May 03, 2021 at 02:38 PM
+-- Generation Time: May 11, 2021 at 08:13 AM
 -- Server version: 10.5.8-MariaDB-1:10.5.8+maria~focal
 -- PHP Version: 7.4.13
 
@@ -31,15 +31,20 @@ CREATE TABLE `destinations` (
   `id` int(10) NOT NULL,
   `location` varchar(150) NOT NULL,
   `price` int(10) NOT NULL,
-  `id_tour_operator` int(10) NOT NULL
+  `id_tour_operator` int(10) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `imagenoiretblanc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `destinations`
 --
 
-INSERT INTO `destinations` (`id`, `location`, `price`, `id_tour_operator`) VALUES
-(1, 'corse', 500, 1);
+INSERT INTO `destinations` (`id`, `location`, `price`, `id_tour_operator`, `image`, `imagenoiretblanc`) VALUES
+(40, 'Italie', 250, 12, 'image/italie.jpg', 'image/italie-ConvertImage.jpg'),
+(41, 'Londres', 300, 9, 'image/londre.jpg', 'image/londre-ConvertImage.jpg'),
+(42, 'berlin', 500, 12, 'image/berlin.jpg', 'image/berlin-ConvertImage.jpg'),
+(43, 'Paris', 250, 12, 'image/paris.jpg', 'image/paris-ConvertImage.jpg');
 
 -- --------------------------------------------------------
 
@@ -59,7 +64,8 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `message`, `author`, `id_tour_operator`) VALUES
-(1, 'super club !', 'alex', 1);
+(16, 'oui', 'oui', 12),
+(17, 'yo', 'moi', 9);
 
 -- --------------------------------------------------------
 
@@ -80,7 +86,27 @@ CREATE TABLE `tour_operators` (
 --
 
 INSERT INTO `tour_operators` (`id`, `name`, `grade`, `link`, `is_premium`) VALUES
-(1, 'club med', 5, 'https://www.clubmed.fr/', 0);
+(9, 'Agence_Mondial', 0, 'https//:www.Agence_Mondial.com', 0),
+(12, 'club_voyage', 0, 'https//:www/club_voyage.com', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `pseudo`, `password`) VALUES
+(1, 'Romain ', '123');
 
 --
 -- Indexes for dumped tables
@@ -107,6 +133,12 @@ ALTER TABLE `tour_operators`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -114,19 +146,25 @@ ALTER TABLE `tour_operators`
 -- AUTO_INCREMENT for table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tour_operators`
 --
 ALTER TABLE `tour_operators`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

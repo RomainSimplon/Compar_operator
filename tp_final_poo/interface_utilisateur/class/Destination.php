@@ -6,6 +6,7 @@ class Destination {
     private $price;
     private $image;
     private $id_tour_operator;
+    private $imagenoiretblanc;
 
 
 public function __construct(array $data){
@@ -73,4 +74,17 @@ public function getImage(){
     return $this->image;
 }
 
+public function setImagenoiretblanc($imagenoiretblanc){
+    $this->imagenoiretblanc = $imagenoiretblanc;
 }
+
+
+
+public function getImagenoiretblanc(){
+   return $this->imagenoiretblanc;
+}
+
+
+
+}
+
