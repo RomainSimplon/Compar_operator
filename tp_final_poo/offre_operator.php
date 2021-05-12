@@ -34,28 +34,22 @@ $liste_offre = $manager->offreOperator($id);
     <input type="hidden" name="id_tour_operator" placeholder="auteur" value="<?= $id ?>">
     <input type="submit" name="ajouter"> 
 </form>
-
-
 </div>
-
 <div id="tour_operator3">
 <?php
-    $messages = $manager->getAllMessages();
+    $messages = $manager->getAllMessages($id);
     foreach($messages as $msg){
+        
         echo $msg->getAuthor() ;
         echo ' :  ';
         echo $msg->getMessage();
+        echo '<br>';
+
     }
 ?>
 </div>
-
 </div>
 
-
-
-
-
 <?php
-
-
 include 'interface_utilisateur/structure/footer.php';
+?>

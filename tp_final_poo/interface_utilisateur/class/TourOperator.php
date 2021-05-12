@@ -7,6 +7,8 @@ class TourOperator {
     private $grade;
     private $link;
     private $is_premium;
+    private $image;
+    private $imagewb;
 
     
     public function __construct(array $donnees)
@@ -70,4 +72,26 @@ class TourOperator {
     public function getIsPremium(){
         return $this->is_premium;
     }
+
+
+public function setImage($image){
+    $this->image = $image;
+}
+
+public function getImage(){
+    return $this->image;
+}
+
+public function setImageWb($imagewb){
+    $this->imagewb = $imagewb;
+}
+
+
+
+public function getImageWb(){
+   return $this->imagewb;
+}
+
+
+
 }

@@ -38,6 +38,7 @@
 <style>
 
 <?= '.destinations'.$unelist->getId() ?>.bg{
+  z-index: 6;
 background-image: url('<?= displayBgBlackImage($unelist)?>');
 background-position: center;
   background-size: cover;
@@ -47,6 +48,7 @@ background-position: center;
 
 
  <?= '.destinations'.$unelist->getId() ?>.card:hover, <?= '.destinations'.$unelist->getId() ?>.card:focus{
+  z-index: 5;
   background-position: center;
   background-size: cover;
   outline: none;
@@ -81,9 +83,3 @@ background-position: center;
 
 
 
-<div>
-    <?php
-include 'interface_utilisateur/structure/footer.php';
-?>
-
-</div>

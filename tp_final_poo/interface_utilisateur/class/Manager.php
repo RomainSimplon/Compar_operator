@@ -101,13 +101,15 @@ public function getOperatorByDestination($location){
 public function CreatOperator(TourOperator $operators){
     var_dump($operators);
     $q = $this->bdd->prepare(
-        'INSERT INTO tour_operators (name, grade,link,is_premium)
-        VALUES(:name, :grade, :link, :is_premium)'
+        'INSERT INTO tour_operators (name, grade,link,is_premium,image,imagewb)
+        VALUES(:name, :grade, :link, :is_premium, :image, :imagewb)'
     );
     $q->bindValue(':name', $operators->getName());
     $q->bindValue(':grade', $operators->getGrade(), PDO::PARAM_INT);
     $q->bindValue(':link', $operators->getLink());
     $q->bindValue(':is_premium', $operators->getIsPremium());
+    $q->bindValue(':image', $operators->getImage());
+    $q->bindValue(':imagewb', $operators->getImageWb());
     $q->execute();
 }
 
@@ -117,7 +119,7 @@ public function offreOperator($id){
 
     $liste_offre = [];
     $select = $this->bdd->prepare('SELECT * FROM destinations WHERE id_tour_operator = ? ');
-    $select->execute([$id]);;
+    $select->execute([$id]);
     $data = $select->fetchAll(PDO::FETCH_ASSOC);
     foreach($data as $loc){ 
 
@@ -154,10 +156,10 @@ public function CreatReview(Review $messages){
 
     }
 
-    public function getAllMessages(){
+    public function getAllMessages($id){
         $messages = [];
-    $select = $this->bdd->prepare('SELECT * FROM reviews');
-    $select->execute();
+    $select = $this->bdd->prepare('SELECT * FROM reviews where id_tour_operator = ?');
+    $select->execute([$id]);
    
     foreach($select->fetchAll() as $msg){ 
 
